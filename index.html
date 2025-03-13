@@ -11,40 +11,55 @@
         />
 
         <!-- fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+            rel="stylesheet"
+        />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
 
         <title>bookStore</title>
     </head>
     <body
-        class="bg-[url('assets/fade-bg.svg')] bg-cover font-['nunito'] relative bg-gradient-to-t from-[#f783ac] from-0% via-gray-100 via-50% to-[#465779] to-95%"
+        class="bg-[url('assets/fade-bg.svg')] bg-cover font-['nunito'] relative bg-gradient-to-t from-[#f783ac] from-5% via-gray-100 via-50% to-[#465779] to-95%  "
     >
-    
         <nav
-            class="flex gap-2 justify-center items-cennter w-[900px] p-2 rounded-xl mx-auto mt-2"
+            class="flex gap-2 justify-center items-center md:flex-row w-full max-w-4xl p-4 rounded-xl mx-auto mt-2 shadow-md bg-white "
         >
-            <h1 class="text-xl">bookStore</h1>
-            <ul
-                class="flex items-center justify-center w-full gap-2"
-            >
-                <li class="">Home</li>
-                <li class="">About Us</li>
-                <li class="">Contact Us</li>
+            
+            <div class="flex items-center justify-between w-full md:w-auto">
+                <h1 class="text-xl font-bold">bookStore</h1>
+                <!-- humburger menu -->
+                <button class="md:hidden text-2xl focus:outline-none cursor-pointer" id="menu-toggle">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <ul class="hidden md:flex items-center justify-center w-full gap-4 md:w-auto absolute md:static top-0 left-0 h-screen md:h-auto bg-white md:bg-transparent flex-col md:flex-row transition-all duration-300 ease-in-out z-10" id="menu">
+                <li class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg">Home</li>
+                <li class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg">About Us</li>
+                <li class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg">Contact Us</li>
             </ul>
-            <div class="flex gap-2">
+
+            <div class="flex gap-2 w-full md:w-auto">
                 <input
                     type="text"
                     placeholder="Search for books"
-                    class="border rounded-2xl px-2"
+                    class="border rounded-2xl px-2 w-full md:w-64"
                 />
                 <button class="bg-pink-300 px-3 rounded-2xl">
                     <i class="bi bi-search"></i>
@@ -52,89 +67,138 @@
             </div>
         </nav>
 
-    <div class=" w-60 h-60 absolute z-10 ml-3 top-9 left-4 bg-[url('assets/read-4.svg')] bg-cover"></div>
-    
+        <!-- bg image -->
+        <div
+            class="w-60 h-60 absolute z-[-10] ml-3 top-9 left-4 bg-[url('assets/read-4.svg')] bg-cover sm:block hidden"
+        ></div>
 
+        <main
+            class="flex flex-col gap-6 justify-center items-between m-6 relative"
+        >
 
-        <main class="flex flex-col gap-6 justify-center items-between m-6 relative">
+        <!-- bg image 2 -->
+            <div
+                class="w-60 h-60 absolute ml-3 bottom-18 right-2 bg-[url('assets/read-3.svg')] bg-contain sm:block hidden"
+            ></div>
 
-            <div class=" w-60 h-60 absolute ml-3 bottom-18 right-2 bg-[url('assets/read-3.svg')] bg-contain"></div>
-
-                <div class="text-center mt-3">
+            <div class="text-center mt-3">
                 <div class="">
-                    <h1 class="text-5xl text-bold font-['merriweather']">African Children's Books</h1>
+                    <h1 class="text-5xl text-bold font-['merriweather']">
+                        African Children's Books
+                    </h1>
                     <h2 class="font-['lato']">Webtree's Authors</h2>
                 </div>
             </div>
-            
-            <section class="" >
+
+            <section class="">
                 <div class="flex flex-col gap-3 justify-center items-center">
-                    <h1 class="text-bold text-xl bg-pink-300 px-3 rounded-xl m-2">Our Collections</h1>
-                    <div class="grid grid-cols-3 grid-rows-1 gap-4 ">
+                    <h1
+                        class="text-bold text-xl bg-pink-300 px-3 rounded-xl m-2"
+                    >
+                        Our Collections
+                    </h1>
+                    <div class="grid  grid-cols-1 md:grid-cols-3 md:grid-rows-1 gap-4 ">
                         <a href="#" class="border p-2 text-center rounded">
-                            <img src="assets/28995.jpg" alt="book" class="w-40 h-40 rounded" />
+                            <img
+                                src="assets/28995.jpg"
+                                alt="book"
+                                class="w-40 h-40 rounded"
+                            />
                             <h2 class="">Children</h2>
                         </a>
                         <a href="#" class="border p-2 text-center rounded">
-                            <img src="assets/african-teen.jpg" alt="book" class="w-40 h-40 rounded" />
+                            <img
+                                src="assets/african-teen.jpg"
+                                alt="book"
+                                class="w-40 h-40 rounded"
+                            />
                             <h2 class="">Teen</h2>
                         </a>
                         <a href="#" class="border p-2 text-center rounded">
-                            <img src="assets/adult-african.jpg" alt="book" class="w-40 h-40 rounded" />
+                            <img
+                                src="assets/adult-african.jpg"
+                                alt="book"
+                                class="w-40 h-40 rounded"
+                            />
                             <h2 class="">Adult</h2>
                         </a>
                     </div>
                 </div>
             </section>
 
-            <section class="z-20" >
+            <section class="z-20">
                 <div class="flex flex-col gap-3 justify-center items-center">
-                    <h1 class="text-bold text-xl text-bold rounded-xl m-2">Upcoming Book Launches</h1>
-                    <div class="grid grid-cols-3 grid-rows-1 gap-4 ">
-                        <a href="#" class=" flex gap-2 border p-2 text-center rounded border w-80">
+                    <h1 class="text-bold text-xl text-bold rounded-xl m-2">
+                        Upcoming Book Launches
+                    </h1>
+                    <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-1 gap-4">
+                        <a
+                            href="#"
+                            class="flex gap-2 border p-2 text-center rounded border w-80"
+                        >
                             <div class="">
-                                <img src="assets/tlp_hero_book-cover.jpg" alt="book" class=" bg-cover w-60 h-40 rounded" />
+                                <img
+                                    src="assets/tlp_hero_book-cover.jpg"
+                                    alt="book"
+                                    class="bg-cover w-60 h-40 rounded"
+                                />
                             </div>
-                            
-                            <div class="border p-2 flex flex-col items-start w-full">
+
+                            <div
+                                class="border p-2 flex flex-col items-start w-full"
+                            >
                                 <h2 class="">Title</h2>
                                 <p class="">Author</p>
                                 <p class="">Date</p>
                                 <p class="">Location</p>
                             </div>
-                            
                         </a>
-                        <a href="#" class=" flex gap-2 border p-2 text-center rounded border w-80">
+                        <a
+                            href="#"
+                            class="flex gap-2 border p-2 text-center rounded border w-80"
+                        >
                             <div class="">
-                                <img src="assets/tlp_hero_book-cover.jpg" alt="book" class=" bg-cover w-60 h-40 rounded" />
+                                <img
+                                    src="assets/tlp_hero_book-cover.jpg"
+                                    alt="book"
+                                    class="bg-cover w-60 h-40 rounded"
+                                />
                             </div>
-                            
-                            <div class="border p-2 flex flex-col items-start w-full">
+
+                            <div
+                                class="border p-2 flex flex-col items-start w-full"
+                            >
                                 <h2 class="">Title</h2>
                                 <p class="">Author</p>
                                 <p class="">Date</p>
                                 <p class="">Location</p>
                             </div>
-                            
                         </a>
-                        <a href="#" class=" flex gap-2 border p-2 text-center rounded border w-80">
+                        <a
+                            href="#"
+                            class="flex gap-2 border p-2 text-center rounded border w-80"
+                        >
                             <div class="">
-                                <img src="assets/tlp_hero_book-cover.jpg" alt="book" class=" bg-cover w-60 h-40 rounded" />
+                                <img
+                                    src="assets/tlp_hero_book-cover.jpg"
+                                    alt="book"
+                                    class="bg-cover w-60 h-40 rounded"
+                                />
                             </div>
-                            
-                            <div class="border p-2 flex flex-col items-start w-full">
+
+                            <div
+                                class="border p-2 flex flex-col items-start w-full"
+                            >
                                 <h2 class="">Title</h2>
                                 <p class="">Author</p>
                                 <p class="">Date</p>
                                 <p class="">Location</p>
                             </div>
-                            
                         </a>
                     </div>
                 </div>
             </section>
         </main>
-        
 
         <!-- <main>
             <section class="bg-[url('/assets/undraw_book-reading_i0eb.svg')] box-shadow-2xl border bg-cover h-60 w-80"></section>
@@ -143,78 +207,87 @@
 
             <section class="bg-[url('/assets/read-3.svg')] box-shadow-2xl bg-center border bg-contain h-60 w-80"></section>
         </main> -->
-    
-    
-        <footer class="mt-[50px] px-[70px] py-[20px] border bg-blue-900 text-white" >
-            <div class="grid grid-cols-5 grid-rows-2 gap-4">
-                <div class="col-span-2 row-span-2 flex flex-col gap-6">
-                    <h1 class="text-bold">bookStore</h1>
-                    <p class="">P.O Box, #, Kampala,level 3.4, mabirizi Plaza,
-                        <br/>
+
+        <footer
+            class="mt-12 sm:mt-16 px-4 py-4 sm:px-10 sm:py-6 border bg-blue-900 text-white "
+        >
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 grid-rows-1 gap-6 sm:gap-8">
+                <div class="col-span-1 sm:col-span-2 md:col-span-2 flex flex-col gap-4">
+                    <h1 class="text-lg sm:text-xl font-bold">bookStore</h1>
+                    <p class="text-sm sm:text-base">
+                        P.O Box, #, Kampala,level 3.4, mabirizi Plaza,
+                        <br />
                         Kampala Road, Uganda
                     </p>
-                    <div class="">
-                        <div class="flex">
+                    <div class="flex flex-col gap-2 text-sm sm:text-base">
+                        <div class="flex items-center gap-2">
                             <h3 class="">Email:</h3>
                             <a type="email" href="#">bookshop.email.com</a>
                         </div>
-                        <div class="flex">
+                        <div class="flex items-center gap-2">
                             <h3 class="">Mobile:</h3>
                             <a type="tel" href="#">0788833280</a>
                         </div>
-                        <div class="flex">
+                        <div class="flex items-center gap-2">
                             <h3 class="">Whatsapp:</h3>
                             <a type="tel" href="#">0788833280</a>
                         </div>
                     </div>
-                    <div class="flex gap-3">
-                        <i class="bi bi-facebook"></i>
-                        <i class="bi bi-twitter"></i>
-                        <i class="bi bi-instagram"></i>
-                        <i class="bi bi-whatsapp"></i>
+                    <div class="flex gap-3 text-xl">
+                        <i class="bi bi-facebook hover:text-pink-300"></i>
+                        <i class="bi bi-twitter hover:text-pink-300"></i>
+                        <i class="bi bi-instagram hover:text-pink-300"></i>
+                        <i class="bi bi-whatsapp hover:text-pink-300"></i>
                     </div>
                 </div>
 
-                <div class="row-span-2 col-start-3 flex flex-col gap-6">
-                    <h2 class="text-bold">Quick Links</h2>
-                    <ul class="flex flex-col gap-3">
-                        <li>Home</li>
-                        <li>About Us</li>
-                        <li>Contact Us</li>
-                        <li>FAQs</li>
+                <!-- Quick Links -->
+                <div class=" col-span-1 sm:col-span-1 md:col-span-1 flex flex-col gap-4">
+                    <h2 class="text-lg sm:text-xl font-bold">Quick Links</h2>
+                    <ul class="flex flex-col gap-2 text-sm sm:text-base">
+                        <li class="hover:text-pink-300">Home</li>
+                        <li class="hover:text-pink-300">About Us</li>
+                        <li class="hover:text-pink-300">Contact Us</li>
+                        <li class="hover:text-pink-300">FAQs</li>
                     </ul>
                 </div>
 
-                <div class="row-span-2 col-start-4 flex flex-col gap-6">
-                    <h2 class="text-bold">Policy</h2>
-                    <ul class="flex flex-col gap-3">
-                        <li>Terms & Conditions</li>
-                        <li>Return Policy</li>
-                        <li>Refund Policy</li>
+                <!-- Policy -->
+                <div class="col-start-1 sm:col-span-1 md:col-span-1 flex flex-col gap-4">
+                    <h2 class="text-lg sm:text-xl font-bold">Policy</h2>
+                    <ul class="flex flex-col gap-2 text-sm sm:text-base">
+                        <li class="hover:text-pink-300">Terms & Conditions</li>
+                        <li class="hover:text-pink-300">Return Policy</li>
+                        <li class="hover:text-pink-300">Refund Policy</li>
                     </ul>
                 </div>
 
-                <div class="row-span-3 col-start-5 flex flex-col gap-6">
-                    <h2 class="text-bold">Categories</h2>
-                    <ul class="flex flex-col gap-3">
-                        <li>Children</li>
-                        <li>Teens</li>
-                        <li>Adults</li>
+                <!-- Categories -->
+                <div class="col-span-1 sm:col-span-2 md:col-span-1 flex flex-col gap-4">
+                    <h2 class="text-lg sm:text-xl font-bold">Categories</h2>
+                    <ul class="flex flex-col gap-2 text-sm sm:text-base">
+                        <li class="hover:text-pink-300">Children</li>
+                        <li class="hover:text-pink-300">Teens</li>
+                        <li class="hover:text-pink-300" >Adults</li>
                     </ul>
-                    <form action="#" method="post" class="">
-                        <h5 class="">Subscribe to our NewsLetter</h5>
+                    <form action="#" method="post" class="mt-4">
+                        <h5 class="text-sm sm:text-base">Subscribe to our NewsLetter</h5>
                         <div class="flex gap-2 mt-2">
-                            <input type="email" placeholder="Email" class="border rounded-2xl px-2 w-40 text-sm" />
-                        <button class="bg-pink-300 px-3 rounded-2xl">
-                            <i class="bi bi-arrow-right"></i>
-                        </button>
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                class="border rounded-2xl px-2 w-40 text-sm"
+                            />
+                            <button class="bg-pink-300 px-3 rounded-2xl">
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
                         </div>
-                        
                     </form>
                 </div>
             </div>
-            <div class="text-center">&copy; 2025</div>
+            <div class="text-center mt-4 text-sm sm:text-base">&copy; 2025</div>
         </footer>
 
+        <script src="/main.js" ></script>
     </body>
 </html>
