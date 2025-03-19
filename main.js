@@ -31,12 +31,19 @@ const prevArrow = document.querySelector(".prev-arrow");
 const nextArrow = document.querySelector(".next-arrow");
 
 if (carousel && prevArrow && nextArrow) {
-    const cardWidth = carousel.querySelector("a").offsetWidth;
+
+    carousel.scrollLeft = 0;
+
+    let cardWidth;
+    const updateCardWidth = () => { 
+        cardWidth = carousel.querySelector("div").offsetWidth;
+    };
+    updateCardWidth();
+    window.addEventListener("resize", updateCardWidth);
     const gap = 16;
 
     nextArrow.addEventListener("click", () => {
-        const scrollAmount =
-            window.innerWidth < 768 ? cardWidth + gap : (cardWidth + gap) * 2;
+        const scrollAmount =cardWidth + gap;
         carousel.scrollBy({
             left: scrollAmount,
             behavior: "smooth",
@@ -44,8 +51,7 @@ if (carousel && prevArrow && nextArrow) {
     });
 
     prevArrow.addEventListener("click", () => {
-        const scrollAmount =
-            window.innerWidth < 768 ? cardWidth + gap : (cardWidth + gap) * 2;
+        const scrollAmount =cardWidth + gap;
         carousel.scrollBy({
             left: -scrollAmount,
             behavior: "smooth",
@@ -53,20 +59,16 @@ if (carousel && prevArrow && nextArrow) {
     });
 
     carousel.addEventListener("scroll", () => {
-
         if (window.innerWidth < 768) {
-            prevArrow.style.display = carousel.scrollLeft > 0 ? "block" : "none";
-            nextArrow.style.display =
-                carousel.scrollLeft < carousel.scrollWidth - carousel.clientWidth
-                    ? "block"
-                    : "none";
+            const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth - 1;
+            prevArrow.style.display = carousel.scrollLeft > 1 ? "block" : "none";
+            nextArrow.style.display = carousel.scrollLeft < maxScrollLeft ? "block" : "none";
         }
     });
 
     if (window.innerWidth < 768) {
-        prevArrow.style.display = carousel.scrollLeft > 0 ? "block" : "none";
-        nextArrow.style.display = carousel.scrollWidth - carousel.clientWidth
-            ? "block"
-            : "none";
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth - 1;
+        prevArrow.style.display = carousel.scrollLeft > 1 ? "block" : "none";
+        nextArrow.style.display = carousel.scrollWidth < maxScrollLeft ? "block": "none";
     }
 }
