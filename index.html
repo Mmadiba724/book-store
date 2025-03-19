@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="m-0 p-0 w-full">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,26 +33,57 @@
         />
 
         <title>bookStore</title>
+
+        <style>
+            /* Hide scrollbar but keep functionality */
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
+            }
+        </style>
+
     </head>
     <body
-        class="md:bg-[url('assets/bg-one.png')] md:bg-[size:100%_71%]  md:bg-no-repea sm:bg-cover bg-gradient-to-t from-[#f783ac] from-5% via-gray-100 via-50% to-[#465779] to-95% font-['nunito'] relative "
+        class="md:bg-[url('assets/bg-one-long.svg')] md:bg-[size:100%_100%] md:bg-cover md:bg-no-repeat sm:bg-cover bg-gradient-to-t from-[#f783ac] from-5% md:w-full via-gray-100 via-50% to-[#465779] to-95% font-['nunito'] relative flex flex-col m-0 p-0 w-full overflow-x-hidden"
     >
         <nav
-            class="flex gap-2 justify-between items-center md:flex-row w-full max-w-4xl p-4 rounded-xl mx-auto mt-2 shadow-md bg-white "
+            class="flex gap-2 justify-between items-center md:flex-row w-full max-w-4xl p-4 rounded-xl mx-auto mt-2 shadow-md bg-white"
         >
-            
             <div class="flex items-center justify-between w-full md:w-auto">
-                <h1 class="text-xl font-bold">book<span class="text-pink-300">Store</span> </h1>
+                <h1 class="text-xl font-bold">
+                    book<span class="text-pink-300">Store</span>
+                </h1>
                 <!-- humburger menu -->
-                <button class="md:hidden text-2xl focus:outline-none cursor-pointer" id="menu-toggle">
+                <button
+                    class="md:hidden text-2xl focus:outline-none cursor-pointer"
+                    id="menu-toggle"
+                >
                     <i class="bi bi-list"></i>
                 </button>
             </div>
 
-            <ul class="hidden md:flex items-center justify-center w-full gap-4 md:w-auto absolute md:static top-0 left-0 h-screen md:h-auto bg-white md:bg-transparent flex-col md:flex-row transition-all duration-300 ease-in-out z-10" id="menu">
-                <li class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg">Home</li>
-                <li class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg">About Us</li>
-                <li class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg">Contact Us</li>
+            <ul
+                class="hidden md:flex items-center justify-center w-full gap-4 md:w-auto absolute md:static top-0 left-0 h-screen md:h-auto bg-white md:bg-transparent flex-col md:flex-row transition-all duration-300 ease-in-out z-10"
+                id="menu"
+            >
+                <li
+                    class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg"
+                >
+                    Home
+                </li>
+                <li
+                    class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg"
+                >
+                    About Us
+                </li>
+                <li
+                    class="hover:text-pink-500 cursor-pointer py-4 md:py-0 text-lg"
+                >
+                    Contact Us
+                </li>
             </ul>
 
             <div class="flex gap-2 w-full md:w-auto">
@@ -73,10 +104,9 @@
         ></div> -->
 
         <main
-            class="flex flex-col gap-6 justify-center items-between m-6 relative"
+            class="flex flex-col gap-6 justify-center items-between m-6 relative w-full"
         >
-
-        <!-- bg image 2 -->
+            <!-- bg image 2 -->
             <!-- <div
                 class="w-60 h-60 absolute ml-3 bottom-18 right-2 bg-[url('assets/read-3.svg')] bg-contain sm:block hidden"
             ></div> -->
@@ -97,31 +127,56 @@
                     >
                         Our Collections
                     </h1>
-                    <div class="grid  grid-cols-1 md:grid-cols-3 md:grid-rows-1 gap-4 ">
-                        <a href="#" class="border p-2 text-center rounded">
-                            <img
-                                src="assets/28995.jpg"
-                                alt="book"
-                                class="w-40 h-40 rounded"
-                            />
-                            <h2 class="">Children</h2>
-                        </a>
-                        <a href="#" class="border p-2 text-center rounded">
-                            <img
-                                src="assets/african-teen.jpg"
-                                alt="book"
-                                class="w-40 h-40 rounded"
-                            />
-                            <h2 class="">Teen</h2>
-                        </a>
-                        <a href="#" class="border p-2 text-center rounded">
-                            <img
-                                src="assets/adult-african.jpg"
-                                alt="book"
-                                class="w-40 h-40 rounded"
-                            />
-                            <h2 class="">Adult</h2>
-                        </a>
+                    <div class="carousel-container relative w-full max-w-4xl mx-auto ">
+                        <div
+                            class="carousel flex justify-center overflow-x-auto scroll-smooth snap-x snap-mandatory gap-4 pb-4 hide-scrollbar md:gap-4"
+                        >
+                            <a
+                                href="#"
+                                class="border p-2 text-center rounded flex-shrink-0 w-60 sm:w-[calc(33.33%-1rem)] snap-start"
+                            >
+                                <img
+                                    src="assets/28995.jpg"
+                                    alt="book"
+                                    class="w-40 h-40 rounded mx-auto"
+                                />
+                                <h2 class="">Children</h2>
+                            </a>
+
+                            <a
+                                href="#"
+                                class="border p-2 text-center rounded flex-shrink-0 w-60 sm:w-[calc(33.33%-1rem)] snap-start"
+                            >
+                                <img
+                                    src="assets/african-teen.jpg"
+                                    alt="book"
+                                    class="w-40 h-40 rounded mx-auto"
+                                />
+                                <h2 class="">Teen</h2>
+                            </a>
+                            <a
+                                href="#"
+                                class="border p-2 text-center rounded flex-shrink-0 w-60 sm:w-[calc(33.33%-1rem)]  snap-start"
+                            >
+                                <img
+                                    src="assets/adult-african.jpg"
+                                    alt="book"
+                                    class="w-40 h-40 rounded mx-auto"
+                                />
+                                <h2 class="">Adult</h2>
+                            </a>
+                        </div>
+                        <!-- buttons left & right -->
+                        <button
+                            class="prev-arrow absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 md:display-none rounded-full block md:hidden"
+                        >
+                            &larr;
+                        </button>
+                        <button
+                            class="next-arrow absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full block md:hidden"
+                        >
+                            &rarr;
+                        </button>
                     </div>
                 </div>
             </section>
@@ -131,7 +186,9 @@
                     <h1 class="text-bold text-xl text-bold rounded-xl m-2">
                         Upcoming Book Launches
                     </h1>
-                    <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-1 gap-4">
+                    <div
+                        class="grid grid-cols-1 md:flex md:flex-wrap md:justify-center gap-4"
+                    >
                         <a
                             href="#"
                             class="flex gap-2 border p-2 text-center rounded border w-80"
@@ -209,10 +266,14 @@
         </main> -->
 
         <footer
-            class="mt-12 sm:mt-16 px-4 py-4 sm:px-10 sm:py-6 border bg-blue-900 text-white "
+            class="mt- sm:mt- px-4 py-4 sm:px-10 sm:py-6 border bg-blue-900 text-white w-full"
         >
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 grid-rows-1 gap-6 sm:gap-8">
-                <div class="col-span-1 sm:col-span-2 md:col-span-2 flex flex-col gap-4">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 grid-rows-1 gap-6 sm:gap-8"
+            >
+                <div
+                    class="col-span-1 sm:col-span-2 md:col-span-2 flex flex-col gap-4"
+                >
                     <h1 class="text-lg sm:text-xl font-bold">bookStore</h1>
                     <p class="text-sm sm:text-base">
                         P.O Box, #, Kampala,level 3.4, mabirizi Plaza,
@@ -242,7 +303,9 @@
                 </div>
 
                 <!-- Quick Links -->
-                <div class=" col-span-1 sm:col-span-1 md:col-span-1 flex flex-col gap-4">
+                <div
+                    class="col-span-1 sm:col-span-1 md:col-span-1 flex flex-col gap-4"
+                >
                     <h2 class="text-lg sm:text-xl font-bold">Quick Links</h2>
                     <ul class="flex flex-col gap-2 text-sm sm:text-base">
                         <li class="hover:text-pink-300">Home</li>
@@ -253,7 +316,9 @@
                 </div>
 
                 <!-- Policy -->
-                <div class="col-start-1 sm:col-span-1 md:col-span-1 flex flex-col gap-4">
+                <div
+                    class="col-start-1 sm:col-span-1 md:col-span-1 flex flex-col gap-4"
+                >
                     <h2 class="text-lg sm:text-xl font-bold">Policy</h2>
                     <ul class="flex flex-col gap-2 text-sm sm:text-base">
                         <li class="hover:text-pink-300">Terms & Conditions</li>
@@ -263,15 +328,19 @@
                 </div>
 
                 <!-- Categories -->
-                <div class="col-span-1 sm:col-span-2 md:col-span-1 flex flex-col gap-4">
+                <div
+                    class="col-span-1 sm:col-span-2 md:col-span-1 flex flex-col gap-4"
+                >
                     <h2 class="text-lg sm:text-xl font-bold">Categories</h2>
                     <ul class="flex flex-col gap-2 text-sm sm:text-base">
                         <li class="hover:text-pink-300">Children</li>
                         <li class="hover:text-pink-300">Teens</li>
-                        <li class="hover:text-pink-300" >Adults</li>
+                        <li class="hover:text-pink-300">Adults</li>
                     </ul>
                     <form action="#" method="post" class="mt-4">
-                        <h5 class="text-sm sm:text-base">Subscribe to our NewsLetter</h5>
+                        <h5 class="text-sm sm:text-base">
+                            Subscribe to our NewsLetter
+                        </h5>
                         <div class="flex gap-2 mt-2">
                             <input
                                 type="email"
@@ -288,6 +357,6 @@
             <div class="text-center mt-4 text-sm sm:text-base">&copy; 2025</div>
         </footer>
 
-        <script src="/main.js" ></script>
+        <script src="/main.js"></script>
     </body>
 </html>
