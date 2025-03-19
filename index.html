@@ -43,8 +43,82 @@
                 -ms-overflow-style: none; /* IE and Edge */
                 scrollbar-width: none; /* Firefox */
             }
-        </style>
 
+            /* button styles */
+            /* From Uiverse.io by karthik092726122003 */
+            .styled-wrapper .button {
+                display: block;
+                position: relative;
+                width: 76px;
+                height: 76px;
+                margin: 0;
+                overflow: hidden;
+                outline: none;
+                background-color: transparent;
+                cursor: pointer;
+                border: 0;
+            }
+
+            .styled-wrapper .button:before {
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                inset: 7px;
+                border: 3px solid black; /* Update dynamically for light/dark mode */
+                transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+                    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+            }
+
+            .styled-wrapper .button:after {
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                inset: 7px;
+                border: 4px solid #599a53;
+                transform: scale(1.3);
+                transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                opacity: 0;
+            }
+
+            .styled-wrapper .button:hover:before,
+            .styled-wrapper .button:focus:before {
+                opacity: 0;
+                transform: scale(0.7);
+                transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
+            .styled-wrapper .button:hover:after,
+            .styled-wrapper .button:focus:after {
+                opacity: 1;
+                transform: scale(1);
+                transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+                    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+            }
+
+            .styled-wrapper .button-box {
+                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .styled-wrapper .button-elem {
+                display: block;
+                width: 30px;
+                height: 30px;
+                margin: 24px 18px 0 22px;
+                transform: rotate(360deg);
+                fill: #f0eeef;
+            }
+
+            .styled-wrapper .button:hover .button-box,
+            .styled-wrapper .button:focus .button-box {
+                transition: 0.4s;
+                transform: translateX(-69px);
+            }
+        </style>
     </head>
     <body
         class="bg-[url('assets/bg-one-long.svg')] md:bg-[size:100%_100%] md:bg-cover md:bg-no-repeat font-['nunito'] relative flex flex-col m-0 p-0 w-full overflow-x-hidden"
@@ -127,67 +201,92 @@
                     >
                         Our Collections
                     </h1>
-                    <div class="carousel-container relative w-full max-w-4xl mx-auto 
-                        ">
+                    <div
+                        class="carousel-container relative w-full max-w-4xl mx-auto"
+                    >
                         <div
-                            class="carousel flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-4 pb-4 hide-scrollbar md:gap-4  pl-4 pt-4"
+                            class="carousel flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-4 pb-4 hide-scrollbar md:gap-4 pl-4 pt-4"
                         >
                             <!-- card one -->
-                        <div class="flex flex-col h-[280px] max-h-[330px] bg-white rounded-lg shadow-[0_10px_12px_rgba(0,0,0,0.08),-4px_-4px_12px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-300 cursor-pointer p-2.5 hover:-translate-y-2.5 hover:shadow-[0_20px_20px_rgba(0,0,0,0.1),-4px_-4px_12px_rgba(0,0,0,0.08)] flex-shrink-0 w-80 sm:w-[calc(33.33%-1rem)] snap-start">
-                            <!-- Image Container -->
-                            <div class="w-full h-[64%] rounded-lg mb-3 overflow-hidden bg-gray-400 flex items-center justify-center">
-                                <img
-                                    src="assets/28995.jpg"
-                                    alt="book"
-                                    class="bg-contain border rounded mx-auto"
-                                />
+                            <div
+                                class="flex flex-col h-[280px] max-h-[330px] bg-white rounded-lg shadow-[0_10px_12px_rgba(0,0,0,0.08),-4px_-4px_12px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-300 cursor-pointer p-2.5 hover:-translate-y-2.5 hover:shadow-[0_20px_20px_rgba(0,0,0,0.1),-4px_-4px_12px_rgba(0,0,0,0.08)] flex-shrink-0 w-80 sm:w-[calc(33.33%-1rem)] snap-start"
+                            >
+                                <!-- Image Container -->
+                                <div
+                                    class="w-full h-[64%] rounded-lg mb-3 overflow-hidden bg-gray-400 flex items-center justify-center"
+                                >
+                                    <img
+                                        src="assets/28995.jpg"
+                                        alt="book"
+                                        class="bg-contain border rounded mx-auto"
+                                    />
+                                </div>
+                                <!-- Card Title -->
+                                <p
+                                    class="m-0 text-[17px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] font-semibold text-[#000] cursor-default line-clamp-1"
+                                >
+                                    Adventure
+                                </p>
+                                <!-- Card Description -->
+                                <p
+                                    class="m-0 text-[13px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] text-purple-500 cursor-default line-clamp-3"
+                                >
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Veniam inventore natus
+                                    modi repellendus dolorem unde odio sequi!
+                                    Porro, cum maiores tempore suscipit
+                                    laudantium perspiciatis, illo sunt,
+                                    reprehenderit quae est blanditiis.
+                                </p>
                             </div>
-                            <!-- Card Title -->
-                            <p class="m-0 text-[17px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] font-semibold text-[#000] cursor-default line-clamp-1">
-                                Adventure
-                            </p>
-                            <!-- Card Description -->
-                            <p class="m-0 text-[13px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] text-purple-500 cursor-default line-clamp-3">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam inventore
-                                natus modi repellendus dolorem unde odio sequi! Porro, cum maiores tempore
-                                suscipit laudantium perspiciatis, illo sunt, reprehenderit quae est
-                                blanditiis.
-                            </p>
-                        </div>
 
                             <!-- card two -->
-                        <div class="flex flex-col h-[280px] max-h-[330px] bg-white rounded-lg shadow-[0_10px_12px_rgba(0,0,0,0.08),-4px_-4px_12px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-300 cursor-pointer p-2.5 hover:-translate-y-2.5 hover:shadow-[0_20px_20px_rgba(0,0,0,0.1),-4px_-4px_12px_rgba(0,0,0,0.08)] flex-shrink-0 w-80 sm:w-[calc(33.33%-1rem)] snap-start">
-                            <!-- Image Container -->
-                            <div class="w-full h-[64%] rounded-lg mb-3 overflow-hidden bg-gray-400 flex items-center justify-center">
-                                <img
-                                    src="assets/african-teen.jpg"
-                                    alt="book"
-                                    class="bg-contain border rounded mx-auto"
-                                />
+                            <div
+                                class="flex flex-col h-[280px] max-h-[330px] bg-white rounded-lg shadow-[0_10px_12px_rgba(0,0,0,0.08),-4px_-4px_12px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-300 cursor-pointer p-2.5 hover:-translate-y-2.5 hover:shadow-[0_20px_20px_rgba(0,0,0,0.1),-4px_-4px_12px_rgba(0,0,0,0.08)] flex-shrink-0 w-80 sm:w-[calc(33.33%-1rem)] snap-start"
+                            >
+                                <!-- Image Container -->
+                                <div
+                                    class="w-full h-[64%] rounded-lg mb-3 overflow-hidden bg-gray-400 flex items-center justify-center"
+                                >
+                                    <img
+                                        src="assets/african-teen.jpg"
+                                        alt="book"
+                                        class="bg-contain border rounded mx-auto"
+                                    />
+                                </div>
+                                <!-- Card Title -->
+                                <p
+                                    class="m-0 text-[17px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] font-semibold text-[#000] cursor-default line-clamp-1"
+                                >
+                                    Adventure
+                                </p>
+                                <!-- Card Description -->
+                                <p
+                                    class="m-0 text-[13px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] text-purple-500 cursor-default line-clamp-3"
+                                >
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Veniam inventore natus
+                                    modi repellendus dolorem unde odio sequi!
+                                    Porro, cum maiores tempore suscipit
+                                    laudantium perspiciatis, illo sunt,
+                                    reprehenderit quae est blanditiis.
+                                </p>
                             </div>
-                            <!-- Card Title -->
-                            <p class="m-0 text-[17px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] font-semibold text-[#000] cursor-default line-clamp-1">
-                                Adventure
-                            </p>
-                            <!-- Card Description -->
-                            <p class="m-0 text-[13px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] text-purple-500 cursor-default line-clamp-3">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam inventore
-                                natus modi repellendus dolorem unde odio sequi! Porro, cum maiores tempore
-                                suscipit laudantium perspiciatis, illo sunt, reprehenderit quae est
-                                blanditiis.
-                            </p>
-                        </div>
 
                             <!-- card three -->
-                        <div class="flex flex-col h-[280px] max-h-[330px] bg-white rounded-lg shadow-[0_10px_12px_rgba(0,0,0,0.08),-4px_-4px_12px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-300 cursor-pointer p-2.5 hover:-translate-y-2.5 hover:shadow-[0_20px_20px_rgba(0,0,0,0.1),-4px_-4px_12px_rgba(0,0,0,0.08)] flex-shrink-0 w-80 sm:w-[calc(33.33%-1rem)] snap-start">
-                            <!-- Image Container -->
-                            <div class="w-full h-[64%] rounded-lg mb-3 overflow-hidden bg-gray-400 flex items-center justify-center">
-                                <img
-                                    src="assets/adult-african.jpg"
-                                    alt="book"
-                                    class="bg-contain border rounded mx-auto"
-                                />
-                                <!-- <svg
+                            <div
+                                class="flex flex-col h-[280px] max-h-[330px] bg-white rounded-lg shadow-[0_10px_12px_rgba(0,0,0,0.08),-4px_-4px_12px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-300 cursor-pointer p-2.5 hover:-translate-y-2.5 hover:shadow-[0_20px_20px_rgba(0,0,0,0.1),-4px_-4px_12px_rgba(0,0,0,0.08)] flex-shrink-0 w-80 sm:w-[calc(33.33%-1rem)] snap-start"
+                            >
+                                <!-- Image Container -->
+                                <div
+                                    class="w-full h-[64%] rounded-lg mb-3 overflow-hidden bg-gray-400 flex items-center justify-center"
+                                >
+                                    <img
+                                        src="assets/adult-african.jpg"
+                                        alt="book"
+                                        class="bg-contain border rounded mx-auto"
+                                    />
+                                    <!-- <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="1em"
                                     height="1em"
@@ -201,45 +300,113 @@
                                         d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zM338 304c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm513.9 437.1a8.11 8.11 0 0 1-5.2 1.9H177.2c-4.4 0-8-3.6-8-8 0-1.9.7-3.7 1.9-5.2l170.3-202c2.8-3.4 7.9-3.8 11.3-1 .3.3.7.6 1 1l99.4 118 158.1-187.5c2.8-3.4 7.9-3.8 11.3-1 .3.3.7.6 1 1l229.6 271.6c2.6 3.3 2.2 8.4-1.2 11.2z"
                                     ></path>
                                 </svg> -->
+                                </div>
+                                <!-- Card Title -->
+                                <p
+                                    class="m-0 text-[17px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] font-semibold text-[#000] cursor-default line-clamp-1"
+                                >
+                                    History
+                                </p>
+                                <!-- Card Description -->
+                                <p
+                                    class="m-0 text-[13px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] text-purple-500 cursor-default line-clamp-3"
+                                >
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Veniam inventore natus
+                                    modi repellendus dolorem unde odio sequi!
+                                    Porro, cum maiores tempore suscipit
+                                    laudantium perspiciatis, illo sunt,
+                                    reprehenderit quae est blanditiis.
+                                </p>
                             </div>
-                            <!-- Card Title -->
-                            <p class="m-0 text-[17px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] font-semibold text-[#000] cursor-default line-clamp-1">
-                                History
-                            </p>
-                            <!-- Card Description -->
-                            <p class="m-0 text-[13px] font-['Lucida_Sans',_'Lucida_Sans_Regular',_'Lucida_Grande',_'Lucida_Sans_Unicode',_Geneva,_Verdana,_sans-serif] text-purple-500 cursor-default line-clamp-3">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam inventore
-                                natus modi repellendus dolorem unde odio sequi! Porro, cum maiores tempore
-                                suscipit laudantium perspiciatis, illo sunt, reprehenderit quae est
-                                blanditiis.
-                            </p>
-                        </div>
-
-                            
-                            
                         </div>
                         <!-- buttons left & right -->
-                        <button
-                            class="prev-arrow absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 md:display-none rounded-full block md:hidden"
-                        >
-                            &larr;
-                        </button>
-                        <button
-                            class="next-arrow absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full block md:hidden"
-                        >
-                            &rarr;
-                        </button>
+                        <div class="flex justify-center gap-10">
+                            <!-- <div class="">
+                                <button
+                                    class="prev-arrow absolute bg-gray-800 text-white p-2 md:display-none rounded-full block md:hidden"
+                                >
+                                    &larr;
+                                </button>
+                            </div> -->
+
+                            <!-- button prev  -->
+                            <div class="styled-wrapper">
+                                <button class="button prev-arrow">
+                                    <div class="button-box">
+                                        <span class="button-elem">
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="arrow-icon"
+                                            >
+                                                <path
+                                                    fill="black"
+                                                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                        <span class="button-elem">
+                                            <svg
+                                                fill="black"
+                                                viewBox="0 0  24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="arrow-icon"
+                                            >
+                                                <path
+                                                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <!-- button next  -->
+                            <div class="styled-wrapper">
+                                <button class="button next-arrow">
+                                    <div class="button-box">
+                                        <span class="button-elem">
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="arrow-icon"
+                                            >
+                                                <path
+                                                    fill="black"
+                                                    d="M4 11h12.17l-5.59-5.59L12 4l8 8-8 8-1.41-1.41L16.17 13H4v-2z"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                        <span class="button-elem">
+                                            <svg
+                                                fill="black"
+                                                viewBox="0 0  24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="arrow-icon"
+                                            >
+                                                <path
+                                                    d="M4 11h12.17l-5.59-5.59L12 4l8 8-8 8-1.41-1.41L16.17 13H4v-2z"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="z-20">
+            <section class="z-20 mt-6">
                 <div class="flex flex-col gap-3 justify-center items-center">
                     <h1 class="text-bold text-xl rounded-xl m-2">
                         Upcoming Book Launches
                     </h1>
-            
-                    <div class="carousel-container relative w-full max-w-5xl mx-auto">
+
+                    <div
+                        class="carousel-container relative w-full max-w-5xl mx-auto"
+                    >
                         <div
                             class="carousel flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-4 pb-4 hide-scrollbar pl-4"
                         >
@@ -254,15 +421,17 @@
                                         class="bg-cover w-60 h-40 rounded"
                                     />
                                 </div>
-            
-                                <div class="border p-2 flex flex-col items-start w-full">
+
+                                <div
+                                    class="border p-2 flex flex-col items-start w-full"
+                                >
                                     <h2 class="">Title</h2>
                                     <p class="">Author</p>
                                     <p class="">Date</p>
                                     <p class="">Location</p>
                                 </div>
                             </a>
-            
+
                             <a
                                 href="#"
                                 class="flex gap-2 border p-2 text-center rounded border w-full sm:w-80 snap-center flex-shrink-0"
@@ -274,15 +443,17 @@
                                         class="bg-cover w-60 h-40 rounded"
                                     />
                                 </div>
-            
-                                <div class="border p-2 flex flex-col items-start w-full">
+
+                                <div
+                                    class="border p-2 flex flex-col items-start w-full"
+                                >
                                     <h2 class="">Title</h2>
                                     <p class="">Author</p>
                                     <p class="">Date</p>
                                     <p class="">Location</p>
                                 </div>
                             </a>
-            
+
                             <a
                                 href="#"
                                 class="flex gap-2 border p-2 text-center rounded border w-full sm:w-80 snap-center flex-shrink-0"
@@ -294,8 +465,10 @@
                                         class="bg-cover w-60 h-40 rounded"
                                     />
                                 </div>
-            
-                                <div class="border p-2 flex flex-col items-start w-full">
+
+                                <div
+                                    class="border p-2 flex flex-col items-start w-full"
+                                >
                                     <h2 class="">Title</h2>
                                     <p class="">Author</p>
                                     <p class="">Date</p>
@@ -303,7 +476,7 @@
                                 </div>
                             </a>
                         </div>
-            
+
                         <!-- buttons left & right -->
                         <!-- <button
                             class="prev-arrow absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full block md:hidden"
@@ -318,7 +491,6 @@
                     </div>
                 </div>
             </section>
-            
         </main>
 
         <!-- <main>
